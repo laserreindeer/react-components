@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"alwaysStrict": true,
+		"checkJs": true,
+		"declaration": true,
+		"extendedDiagnostics": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
+		"jsx": "react-jsx",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"newLine": "LF",
+		"noEmitOnError": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "./cjs",
+		"preserveConstEnums": true,
+		"preserveSymlinks": true,
+		"resolveJsonModule": true,
+		"strict": true,
+		"target": "ES2019"
+	},
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./*.js"]
+}
