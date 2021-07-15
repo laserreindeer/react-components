@@ -1,18 +1,14 @@
-import { ComponentMeta, Story } from "@storybook/react";
-import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Example } from "../../src/components/Example/Example";
-import { ExampleProperties } from "../../src/components/Example/ExampleProperties";
-import { action } from "../action";
 
-export const Base: Story<ExampleProperties> = properties => (
-	<Example onClick={action("onClick")} {...properties} />
+export const Base: ComponentStory<typeof Example> = properties => (
+	<Example {...properties} />
 );
 
 export default {
-	title: "Components/Example",
-	component: Example,
 	args: {
-		children: "Content",
-		loading: false
-	}
+		children: "Example content"
+	},
+	title: "Components/Example",
+	component: Example
 } as ComponentMeta<typeof Example>;
