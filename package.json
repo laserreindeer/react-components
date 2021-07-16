@@ -101,7 +101,7 @@
 		"compile": "run-s compile:*",
 		"compile:cjs": "tsc --project tsconfig.cjs.json",
 		"compile:esm": "tsc --project tsconfig.esm.json",
-		"docs": "build-storybook --static-dir ./.storybook/public --output-dir ./docs",
+		"docs": "build-storybook --no-dll --static-dir ./.storybook/public --output-dir ./docs",
 		"lint": "eslint src/**/*.{ts,tsx}",
 		"lint:fix": "eslint src/**/*.{ts,tsx} --fix",
 		"postpublish": "run-s clean",
