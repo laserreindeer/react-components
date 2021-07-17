@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Example } from "../../src/components/Example/Example";
 
 export const Base: ComponentStory<typeof Example> = properties => (
