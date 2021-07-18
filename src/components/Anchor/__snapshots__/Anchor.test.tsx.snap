@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    rel="noopener noreferrer"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot aside 1`] = `
+<DocumentFragment>
+  <a
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
