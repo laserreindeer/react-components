@@ -149,6 +149,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Build
+docs-build
 cjs
 esm
 dist
@@ -157,3 +158,4 @@ dist-ssr
 
 # Lockfiles
 pnpm-lock.yaml
+yarn.lock

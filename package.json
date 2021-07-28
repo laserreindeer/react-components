@@ -82,7 +82,7 @@
 	"homepage": "https://react-components.laserreindeer.com",
 	"husky": {
 		"hooks": {
-			"pre-push": "run-s clean pre-compile lint test docs"
+			"pre-push": "run-s clean pre-compile lint test"
 		}
 	},
 	"keywords": [
@@ -101,7 +101,7 @@
 		"compile": "run-s compile:*",
 		"compile:cjs": "tsc --project tsconfig.cjs.json",
 		"compile:esm": "tsc --project tsconfig.esm.json",
-		"docs": "build-storybook --no-dll --static-dir ./.storybook/public --output-dir ./docs",
+		"document": "build-storybook --no-dll --static-dir ./.storybook/public --output-dir ./docs-build",
 		"lint": "eslint src/**/*.{ts,tsx}",
 		"lint:fix": "eslint src/**/*.{ts,tsx} --fix",
 		"postpublish": "run-s clean",
