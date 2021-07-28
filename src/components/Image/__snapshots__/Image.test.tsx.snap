@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <img />
+</DocumentFragment>
+`;
+
+exports[`matches snapshot srcMap 1`] = `
+<DocumentFragment>
+  <img
+    src="https://placekitten.com/500/500"
+    srcset="https://placekitten.com/500/500 500w,https://placekitten.com/300/300 300w,https://placekitten.com/200/200 200w"
+  />
+</DocumentFragment>
+`;
