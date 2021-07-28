@@ -1,0 +1,36 @@
+name: Document
+on:
+    push:
+        branches:
+            - main
+        paths: ["./.storybook/**", "src/**"]
+jobs:
+    build:
+        name: Document
+        runs-on: ubuntu-latest
+        steps:
+            - name: Use Checkout 2
+              uses: actions/checkout@v2
+
+            - name: Use Node.js 16
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+
+            - name: Use pnpm 6
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 6.x
+                  run_install: true
+
+            - name: Storybook (Pre-install)
+              run: pnpm document
+
+            - name: Storybook (Deploy)
+              uses: JamesIves/github-pages-deploy-action@3.6.2
+              with:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  BRANCH: ${GITHUB_REF#refs/*/}
+                  FOLDER: docs-build
+                  CLEAN: true
+                  TARGET_FOLDER: docs
