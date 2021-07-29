@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import { TextInput } from "./TextInput";
+import { Input } from "./Input";
 
 it("matches snapshot", () => {
-	const { asFragment } = render(<TextInput />);
+	const { asFragment } = render(<Input />);
 	expect(asFragment()).toMatchSnapshot();
 });

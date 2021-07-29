@@ -3,7 +3,8 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <input
-    type="text"
+    type="radio"
+    value=""
   />
 </DocumentFragment>
 `;
