@@ -4,7 +4,7 @@ export { Button } from "./components/Button/Button";
 export { Example } from "./components/Example/Example";
 export { Image } from "./components/Image/Image";
 export type { ImageProperties } from "./components/Image/ImageProperties";
-export { TextInput } from "./components/TextInput/TextInput";
+export { Input } from "./components/Input/Input";
 export { validateAll } from "./utils/validateAll/validateAll";
 export { validateAny } from "./utils/validateAny/validateAny";
 export { wrap } from "./utils/wrap/wrap";
