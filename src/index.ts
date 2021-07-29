@@ -6,6 +6,7 @@ export { Example } from "./components/Example/Example";
 export { Image } from "./components/Image/Image";
 export type { ImageProperties } from "./components/Image/ImageProperties";
 export { Input } from "./components/Input/Input";
+export { Password } from "./components/Password/Password";
 export { Radio } from "./components/Radio/Radio";
 export { validateAll } from "./utils/validateAll/validateAll";
 export { validateAny } from "./utils/validateAny/validateAny";
