@@ -6,18 +6,18 @@ import type { ImageProperties } from "./ImageProperties";
  */
 export const Image = wrap("img")<ImageProperties>(
 	({ srcMap, ...properties }) => {
-		const srcMapEntries =
-			srcMap !== undefined ? Object.entries(srcMap) : undefined;
+		const srcMapSortedEntries =
+			srcMap !== undefined
+				? Object.entries(srcMap)
+						.map(([size, url]) => [parseFloat(size), url] as const)
+						// eslint-disable-next-line max-params
+						.sort(([current], [next]) => next - current)
+				: undefined;
 
 		return (
 			<img
-				src={
-					srcMapEntries
-						?.map(([size, url]) => [parseFloat(size), url] as const)
-						// eslint-disable-next-line max-params
-						.sort(([current], [next]) => current - next)[0]?.[1]
-				}
-				srcSet={srcMapEntries
+				src={srcMapSortedEntries?.[0]?.[1]}
+				srcSet={srcMapSortedEntries
 					?.map(([size, url]) => `${url} ${size}w`)
 					.join(",")}
 				{...properties}
