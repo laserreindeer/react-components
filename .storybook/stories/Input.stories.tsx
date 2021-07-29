@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Input } from "../../src/components/Input/Input";
 
 export const Base: ComponentStory<typeof Input> = properties => (
-	<Input {...properties} />
+	<Input readOnly {...properties} />
 );
 
 export default {
