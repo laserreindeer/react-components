@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { wrap } from "../../utils/wrap/wrap";
 import type { ImageProperties } from "./ImageProperties";
 
@@ -7,19 +6,16 @@ import type { ImageProperties } from "./ImageProperties";
  */
 export const Image = wrap("img")<ImageProperties>(
 	({ srcMap, ...properties }) => {
-		const srcMapEntries = useMemo(
-			() => (srcMap ? Object.entries(srcMap) : undefined),
-			[srcMap]
-		);
+		const srcMapEntries =
+			srcMap !== undefined ? Object.entries(srcMap) : undefined;
 
 		return (
 			<img
 				src={
-					srcMapEntries?.sort(
+					srcMapEntries
+						?.map(([size, url]) => [parseFloat(size), url] as const)
 						// eslint-disable-next-line max-params
-						([previous], [current]) =>
-							parseFloat(current) - parseFloat(previous)
-					)[0]?.[1]
+						.sort(([current], [next]) => current - next)[0]?.[1]
 				}
 				srcSet={srcMapEntries
 					?.map(([size, url]) => `${url} ${size}w`)
