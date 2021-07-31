@@ -7,6 +7,7 @@ export type { ImageProperties } from "./components/Image/ImageProperties";
 export { Input } from "./components/Input/Input";
 export { Password } from "./components/Password/Password";
 export { Radio } from "./components/Radio/Radio";
+export { ResetButton } from "./components/ResetButton/ResetButton";
 export { SubmitButton } from "./components/SubmitButton/SubmitButton";
 export { validateAll } from "./utils/validateAll/validateAll";
 export { validateAny } from "./utils/validateAny/validateAny";
