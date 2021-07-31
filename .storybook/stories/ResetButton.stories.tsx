@@ -1,5 +1,4 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
-
 import { ResetButton } from "../../src/components/ResetButton/ResetButton";
 
 export const Base: ComponentStory<typeof ResetButton> = properties => (
