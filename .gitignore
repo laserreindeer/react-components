@@ -150,8 +150,6 @@ $RECYCLE.BIN/
 
 # Build
 docs-build
-cjs
-esm
 dist
 dist-ssr
 *.local

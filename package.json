@@ -6,38 +6,29 @@
 		"name": "Laser Reindeer",
 		"url": "https://laserreindeer.com"
 	},
-	"bugs": {
-		"url": "https://github.com/laserreindeer/react-components/issues"
-	},
+	"bugs": "https://github.com/laserreindeer/react-components/issues",
 	"devDependencies": {
-		"@babel/core": "^7.14.6",
-		"@babel/parser": "^7.14.7",
+		"@arkweid/lefthook": "^0.7.6",
 		"@laserreindeer/base": "^1.0.3",
-		"@nodelib/fs.scandir": "^2.1.5",
-		"@nodelib/fs.stat": "^2.0.5",
-		"@nodelib/fs.walk": "^1.2.8",
-		"@storybook/addon-actions": "^6.3.4",
-		"@storybook/addon-essentials": "^6.3.4",
-		"@storybook/addon-links": "^6.3.4",
-		"@storybook/addons": "^6.3.4",
-		"@storybook/react": "^6.3.4",
-		"@storybook/theming": "^6.3.4",
+		"@storybook/addon-actions": "^6.3.6",
+		"@storybook/addon-essentials": "^6.3.6",
+		"@storybook/addon-links": "^6.3.6",
+		"@storybook/addons": "^6.3.6",
+		"@storybook/react": "^6.3.6",
+		"@storybook/theming": "^6.3.6",
 		"@testing-library/dom": "^8.1.0",
 		"@testing-library/react": "^12.0.0",
 		"@types/eslint": "7.28.0",
 		"@types/jest": "^26.0.24",
-		"@types/node": "16.3.2",
+		"@types/node": "16.4.10",
 		"@types/prettier": "^2.3.2",
-		"@types/react": "^17.0.14",
+		"@types/react": "^17.0.15",
 		"@types/react-dom": "^17.0.9",
 		"@types/stylelint": "13.13.1",
-		"@typescript-eslint/eslint-plugin": "4.28.3",
-		"@typescript-eslint/parser": "4.28.3",
-		"anymatch": "^3.1.2",
-		"babel-loader": "^8.2.2",
-		"c8": "^7.7.3",
-		"csstype": "^3.0.8",
-		"eslint": "7.30.0",
+		"@typescript-eslint/eslint-plugin": "4.29.0",
+		"@typescript-eslint/parser": "4.29.0",
+		"c8": "^7.8.0",
+		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"eslint-plugin-ban": "^1.5.2",
@@ -47,72 +38,55 @@
 		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-plugin-react": "^7.24.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
-		"fast-glob": "^3.2.7",
-		"form-data": "^4.0.0",
-		"globby": "^11.0.4",
-		"husky": "4.3.8",
 		"jest": "^27.0.6",
-		"jest-diff": "^27.0.6",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.3.5",
 		"prettier": "^2.3.2",
-		"pretty-format": "^27.0.6",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"rimraf": "^3.0.2",
-		"source-map": "^0.7.3",
-		"source-map-js": "^0.6.2",
 		"stylelint": "13.13.1",
 		"stylelint-config-prettier": "^8.0.2",
 		"stylelint-order": "^4.1.0",
 		"stylelint-prettier": "^1.2.0",
-		"ts-jest": "^27.0.3",
+		"ts-jest": "^27.0.4",
 		"typescript": "4.3.5"
 	},
 	"exports": {
-		".": {
-			"import": "./esm/index.js",
-			"require": "./cjs/index.js"
-		}
+		"import": "./dist/import/index.js",
+		"require": "./dist/require/index.js"
 	},
 	"files": [
-		"cjs",
-		"esm"
+		"dist"
 	],
 	"homepage": "https://react-components.laserreindeer.com",
-	"husky": {
-		"hooks": {
-			"pre-push": "run-s clean pre-compile lint test"
-		}
-	},
 	"keywords": [
 		"components",
 		"react"
 	],
 	"license": "MIT",
-	"main": "./cjs/index.js",
-	"module": "./esm/index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/laserreindeer/react-components.git"
+	"main": "./dist/require/index.js",
+	"module": "./dist/import/index.js",
+	"peerDependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
 	},
+	"repository": "laserreindeer/react-components",
 	"scripts": {
-		"clean": "rimraf ./{cjs,esm}",
+		"clean": "rimraf ./dist",
 		"compile": "run-s compile:*",
-		"compile:cjs": "tsc --project tsconfig.cjs.json",
-		"compile:esm": "tsc --project tsconfig.esm.json",
+		"compile:import": "tsc --project tsconfig.import.json",
+		"compile:require": "tsc --project tsconfig.require.json",
 		"document": "build-storybook --no-dll --static-dir ./.storybook/public --output-dir ./docs-build",
 		"lint": "eslint src/**/*.{ts,tsx}",
 		"lint:fix": "eslint src/**/*.{ts,tsx} --fix",
-		"postpublish": "run-s clean",
 		"pre-compile": "run-s pre-compile:*",
-		"pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
-		"pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
+		"pre-compile:import": "tsc --noemit --project tsconfig.import.json",
+		"pre-compile:require": "tsc --noemit --project tsconfig.require.json",
 		"prepublishOnly": "run-s compile prettify",
-		"prettify": "prettier --write --loglevel warn './{cjs,esm}/**/*.{js,ts}'",
+		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
 		"start": "start-storybook --static-dir ./.storybook/public --port 3000",
 		"test": "c8 --reporter=html --reporter=text-summary --reporter=lcov jest"
 	},
 	"source": "./src/index.ts",
-	"types": "./esm/index.d.ts"
+	"types": "./dist/import/index.d.ts"
 }
