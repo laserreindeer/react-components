@@ -1,8 +1,8 @@
-import { wrap } from "../../utils/wrap/wrap";
+import { wrapButton } from "../../utils/wrap/wrapButton";
 
 /**
  * SubmitButton component using the wrap util.
  */
-export const SubmitButton = wrap("button")(props => (
+export const SubmitButton = wrapButton(props => (
 	<button type="submit" {...props} />
 ));
