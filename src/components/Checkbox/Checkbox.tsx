@@ -1,9 +1,9 @@
-import { wrap } from "../../utils/wrap/wrap";
+import { wrapInput } from "../../utils/wrap/wrapInput";
 import { Input } from "../Input/Input";
 
 /**
  * Input of type "checkbox".
  */
-export const Checkbox = wrap("input")(properties => (
+export const Checkbox = wrapInput(properties => (
 	<Input type="checkbox" {...properties} />
 ));

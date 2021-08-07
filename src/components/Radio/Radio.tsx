@@ -1,9 +1,9 @@
-import { wrap } from "../../utils/wrap/wrap";
+import { wrapInput } from "../../utils/wrap/wrapInput";
 import { Input } from "../Input/Input";
 
 /**
  * Input of type "radio".
  */
-export const Radio = wrap("input")(properties => (
+export const Radio = wrapInput(properties => (
 	<Input type="radio" {...properties} />
 ));
