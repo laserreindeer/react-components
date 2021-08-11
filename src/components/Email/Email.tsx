@@ -1,9 +1,9 @@
-import { wrap } from "../../utils/wrap/wrap";
+import { wrapInput } from "../../utils/wrap/wrapInput";
 import { Input } from "../Input/Input";
 
 /**
  * Input of type "email".
  */
-export const Email = wrap("input")(properties => (
+export const Email = wrapInput(properties => (
 	<Input type="email" {...properties} />
 ));
